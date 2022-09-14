@@ -30,6 +30,12 @@ Matrix can be Created using 2D Arrays (Lists in Python), but Complex Functions l
 
 > obj=Matrix(3,3)
 
+#### list(self)
+> This method of the Class will return the 2-D list.
+
+> lst99 = obj.list()
+
+
 #### inputAdd(self)
 > This Method of the Class will change the elements of the Matrix by User Input.
 
