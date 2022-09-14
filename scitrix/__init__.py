@@ -14,6 +14,12 @@ class Matrix:
         for i in range(r):
             self.matrix.append([0]*c)
 
+    def list(self):
+        '''
+        Returns -> 2-D List.
+        '''
+        return self.matrix
+
     def inputAdd(self):
         """
         Enter Data to Matrix using User-Inout, Row-wise.
@@ -332,22 +338,22 @@ def identity(m1: Matrix):
         raise TypeError("Object should be an Instance of Class -> Matrix.")
 
 
-def sM(m1):
-    if m1[0].__class__ == int or m1[0].__class__ == float:
-        return (None, None)
-    return (len(m1), len(m1[0]))
-
-
-def det2(m1):
-    if sM(m1) == (2, 2):
-        return (m1[0][0]*m1[1][1]) - (m1[0][1]*m1[1][0])
-    else:
-        raise Exception(
-            "This function only returns the determinant of Matrices with order 2x2."
-        )
-
-
 def determinant(m1: Matrix):
+    """
+    Calculates the Determinant of the Matrix.
+    """
+    def sM(m1):
+        if m1[0].__class__ == int or m1[0].__class__ == float:
+            return (None, None)
+        return (len(m1), len(m1[0]))
+
+    def det2(m1):
+        if sM(m1) == (2, 2):
+            return (m1[0][0]*m1[1][1]) - (m1[0][1]*m1[1][0])
+        else:
+            raise Exception(
+                "This function only returns the determinant of Matrices with order 2x2."
+            )
     if m1.__class__ == Matrix:
         m1 = m1.matrix
     elif m1.__class__ == list:
