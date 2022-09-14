@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 import codecs,os
-VERSION = '0.1'
+VERSION = '0.1.1'
 DESCRIPTION = 'Module to create Matrix and use Matrix Functions.'
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -14,6 +14,7 @@ setup(
     version=VERSION,
     author="Prakhar Srivastava",
     author_email="<prakhartech983@gmail.com>",
+    url='https://github.com/PrakEntech/scitrix',
     description=DESCRIPTION,
     long_description=long_description,
     long_description_content_type="text/markdown",
