@@ -1,0 +1,28 @@
+Functions -
+
+Global Functions -
+
+Returns/Extract data from a Diagonal Matrix -            diag()
+Determinant NxN -                                        determinant()
+
+Matrix Methods -
+
+Enter Data by User Input -                               inputAdd()
+Convert List to Matrix (Row by Row Data) -               listTomatrix()
+Print Matrix (using Tabulate) -                          printMatrix()
+Generating a Transpose Matrix -                          transpose()
+Size of a Matrix (Dimension) -                           sizeMatrix()
+C = AxB Returns Resultant Matrix of A x B -              matrixMultiplication()
+C = A+B Returns Resultant Matrix of A + B -              matrixAddition()
+C = A-B Returns Resultant Matrix of A - B -              matrixSubtraction()
+C = A/B Returns Resultant Matrix of A / B -              matrixDivision()
+C = z*A Returns Resultant Matrix of zA (z -> Constant) - matrixMultiplicationConstant()
+Adjoint Matrix -                                         adj()
+Inverse Matrix -                                         inverse()
+Mean of the Matrix -                                     mean()
+Mean of Rows of Matrix -                                 rowMeans()
+Mean of Cols of Matrix -                                 colMeans()
+Sum of Cols of Matrix -                                  colSum()
+Sum of Rows of Matrix -                                  rowSum()
+Sum of all Elements of the Matrix -                      sum()
+Returns an Identity Matrix -                             identity()
