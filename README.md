@@ -1,188 +1,263 @@
 # Matrix
 
-> This is a Module which can perform Matrix Functions.
+> This module provides various matrix functions to facilitate matrix operations, including creation, manipulation, and advanced computations.
 
 ---
 
 ### Table of Contents
-You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
-- [Functions-Methods](#functions-methods)
+- [Functions and Methods](#functions-and-methods)
 - [Author Info](#author-info)
 
 ---
 
 ## Description
 
-Matrix can be Created using 2D Arrays (Lists in Python), but Complex Functions like Determinant(N X N), Inverse, Matrix Arithmetic Operations ... is Required. I hope this Module can save your time and effort as well as provide you with some consistency across your Matrix Journey.
+This module allows you to create matrices using 2D arrays (lists in Python) and perform complex operations such as calculating determinants, inverses, and matrix arithmetic. It aims to save time and provide consistency in matrix operations.
 
 [Back To The Top](#matrix)
 
 ---
 
-## Functions-Methods
+## Functions and Methods
 
-### Methods List
+### Class Methods
 
-#### __init__(self,r,c)
-> This method of the Class will initialize the class by creating a matrix A(r,c). And will create the matrix. All elements will be 0.
+#### `__init__(self, r, c)`
+Initializes the matrix with dimensions `r` x `c`, with all elements set to 0.
 
-> obj=Matrix(3,3)
+Example:
+```python
+obj = Matrix(3, 3)
+```
 
-#### list(self)
-> This method of the Class will return the 2-D list.
+#### `list(self)`
+Returns the matrix as a 2-D list.
 
-> lst99 = obj.list()
+Example:
+```python
+lst99 = obj.list()
+```
 
+#### `inputAdd(self)`
+Allows user input to modify the matrix elements.
 
-#### inputAdd(self)
-> This Method of the Class will change the elements of the Matrix by User Input.
+Example:
+```python
+obj.inputAdd()
+```
 
-> obj.inputAdd()
+#### `listTomatrix(self, lst: list)`
+Converts a list into a matrix (self.matrix).
 
-#### listTomatrix(self, lst:list)
-> This method of the Class converts the List Parameter to Matrix (self.matrix).
+Example:
+```python
+obj.listTomatrix([1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
 
-> obj.listTomatrix([1,2,3,4,5,6,7,8,9])
+#### `printMatrix(self)`
+Prints the matrix using the Tabulate module.
 
-#### printMatrix(self)
-> This Method prints the Matrix using Tabulate Module.
+Example:
+```python
+obj.printMatrix()
+```
 
-> obj.printMatrix()
+#### `transpose(self)`
+Returns the transpose of the matrix.
 
-#### transpose(self)
-> This Method Returns a Transpose of the Matrix (self.matrix).
+Returns:
+- `Matrix`
 
-> Return Type -> Matrix
+Example:
+```python
+obj2 = obj.transpose()
+```
 
-> obj2 = obj.transpose()
+#### `sizeMatrix(self)`
+Returns the dimensions of the matrix.
 
-#### sizeMatrix(self)
-> This Method returns the Dimensions of the Matrix.
+Returns:
+- `Tuple`
 
-> Return Type -> Tuple
+Example:
+```python
+tuple1 = obj.sizeMatrix()
+```
 
-> tuple1 = obj.sizeMatrix()
+#### `matrixMultiplication(self, m2: Matrix)`
+Multiplies the current matrix with another matrix `m2`.
 
-#### matrixMultiplication(self, m2:Matrix)
-> This method returns the Result of the Multiplication of 2 Matrices. One Matrix is the Parameter and other is the Matrix created while initializing the Class.
+Returns:
+- `Matrix`
 
-> Return Type -> Matrix
+Example:
+```python
+obj3 = obj.matrixMultiplication(obj2)
+```
 
-> C = A x B
+#### `matrixAddition(self, m2: Matrix)`
+Adds the current matrix to another matrix `m2`.
 
-> obj3 = obj.matrixMultiplication(obj2)
+Returns:
+- `Matrix`
 
-#### matrixAddition(self, m2:Matrix)
-> This Method returns the Result of the Addition of 2 Matrices. One Matrix is the Parameter and other is the Matrix created while initializing the Class.
-Return Type -> Matrix
+Example:
+```python
+obj4 = obj.matrixAddition(obj2)
+```
 
-> C = A + B
+#### `matrixSubtraction(self, m2: Matrix)`
+Subtracts matrix `m2` from the current matrix.
 
-> obj4 = obj.matrixAddition(obj2)
+Returns:
+- `Matrix`
 
-#### matrixSubtraction(self, m2:Matrix)
-> This Method returns the Result of the Subtraction of 2 Matrices. One Matrix is the Parameter and other is the Matrix created while initializing the Class.
+Example:
+```python
+obj4 = obj.matrixSubtraction(obj2)
+```
 
-> Return Type -> Matrix
+#### `matrixMultiplicationConstant(self, c: int or float)`
+Multiplies the matrix by a constant `c`.
 
-> C = A - B
+Example:
+```python
+obj.matrixMultiplicationConstant(5)
+```
 
-> obj4 = obj.matrixSubtraction(obj2)
+#### `adj(self)`
+Returns the adjoint of the matrix.
 
-#### matrixMultiplicationConstant(self, int1 : int OR float)
-> This Method multiplies the Original Matrix with the Constant (int1).
+Returns:
+- `Matrix`
 
-> A = A * c
+Example:
+```python
+obj5 = obj.adj()
+```
 
-> obj.matrixMultiplicationConstant(5)
+#### `inverse(self)`
+Returns the inverse of the matrix.
 
-#### adj(self)
-> This Method returns the Adjoint of the Original Matrix.
+Returns:
+- `Matrix`
 
-> Return Type - Matrix
+Example:
+```python
+obj6 = obj.inverse()
+```
 
-> obj5 = obj.adj()
+#### `mean(self)`
+Returns the mean of all elements in the matrix.
 
-#### inverse(self)
-> This Method returns the Inverse of the Original Matrix.
+Returns:
+- `Float`
 
-> Return Type -> Matrix
+Example:
+```python
+float1 = obj.mean()
+```
 
-> obj6 = obj.inverse()
+#### `rowMeans(self)`
+Returns the mean of each row in the matrix.
 
-#### mean(self)
-> This Method returns the mean of the Original Matrix.
+Returns:
+- `Matrix`
 
-> Return Type -> Float
+Example:
+```python
+obj7 = obj.rowMeans()
+```
 
-> float1 = obj.mean()
+#### `colMeans(self)`
+Returns the mean of each column in the matrix.
 
-#### rowMeans(self)
-> This Method returns the mean of all rows of the Original Matrix.
+Returns:
+- `Matrix`
 
-> Return Type -> Matrix
+Example:
+```python
+obj8 = obj.colMeans()
+```
 
-> obj7 = obj.rowMeans()
+#### `rowSum(self)`
+Returns the sum of each row in the matrix.
 
-#### colMeans(self)
-> This Method returns the mean of all columns of the Original Matrix.
+Returns:
+- `Matrix`
 
-> Return Type -> Matrix
+Example:
+```python
+obj9 = obj.rowSum()
+```
 
-> obj8 = obj.colMeans()
+#### `colSum(self)`
+Returns the sum of each column in the matrix.
 
-#### rowSum(self)
-> This Method returns the sum of all rows of the Original Matrix.
+Returns:
+- `Matrix`
 
-> Return Type -> Matrix
+Example:
+```python
+obj10 = obj.colSum()
+```
 
-> obj9 = obj.colMeans()
+#### `sum(self)`
+Returns the sum of all elements in the matrix.
 
-#### colSum(self)
-> This Method returns the sum of all columns of the Original Matrix.
+Returns:
+- `Float` or `Int`
 
-> Return Type -> Matrix
+Example:
+```python
+var = obj.sum()
+```
 
-> obj10 = obj.colSum()
+#### `matrixDivision(self, m2: Matrix)`
+Divides the current matrix by the inverse of another matrix `m2`.
 
-#### sum(self)
-> This Method returns the sum of all elements of the Matrix.
+Returns:
+- `Matrix`
 
-> Return Type -> Float/Int
+Example:
+```python
+obj11 = obj.matrixDivision(obj2)
+```
 
-> var = obj.sum()
+### Functions
 
-#### matrixDivision(self)
-> This Method returns the Result of the Multiplication of 2 Matrices. One Matrix is the inverse of the Parameter and other is the Matrix created while initializing the Class.
+#### `diag(m1: Matrix or List)`
+Returns a diagonal matrix if `m1` is a list, or a list of diagonal elements if `m1` is a matrix.
 
-> Return Type -> Matrix
+Returns:
+- `Matrix` or `List`
 
-> C = A * B^-1
+Example:
+```python
+list1 = diag(obj)  # if obj is a Matrix
+obj12 = diag([1, 2, 3, 4, 5, 6])  # if [1, 2, 3, 4, 5, 6] is a list
+```
 
-> obj11 = obj.matrixDivision(obj2)
+#### `identity(m1: Matrix)`
+Returns an identity matrix.
 
-### Functions List
+Example:
+```python
+obj13 = identity(obj)
+```
 
-#### diag(m1 : Matrix OR List)
-> This Function returns the Diagonal Matrix if the parameter is a List, And Returns the List of all the Diagonal Elements of the Matrix if the parameter is a Matrix.
+#### `determinant(m1: Matrix)`
+Returns the determinant of an `N x N` matrix.
 
-> Return Type -> Matrix/List
+Returns:
+- `Float` or `Int`
 
-> list1 = diag(obj)  OR   obj12 = diag([1,2,3,4,5,6])
-
-#### identity(m1:Matrix)
-> This Function returns an Identity Matrix.
-
-> obj13 = identity(obj)
-
-#### determinant(m1:Matrix)
-> This Function returns the Deteminant of a Matrix (N x N).
-
-> Return Type -> Float/Int
-
-> det12 = determinant(obj)
+Example:
+```python
+det12 = determinant(obj)
+```
 
 [Back To The Top](#matrix)
 
@@ -190,7 +265,7 @@ Return Type -> Matrix
 
 ## Author Info
 
-- Instagram - [prak_entech983](https://www.instagram.com/prak_entech983/)
-- Youtube - [Prak EnTech](https://www.youtube.com/c/PrakEnTech)
+- Instagram: [prak_entech983](https://www.instagram.com/prak_entech983/)
+- YouTube: [Prak EnTech](https://www.youtube.com/c/PrakEnTech)
 
 [Back To The Top](#matrix)
